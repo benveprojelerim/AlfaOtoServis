@@ -26,7 +26,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.65);
     z-index: -1;
 }
 
@@ -36,7 +36,8 @@ img {
     max-width: 500px;
     height: auto;
     border-radius: 30px;
-    margin-top: 20px;
+    margin: 20px auto;
+    display: block;
 }
 
 /* NAVBAR */
@@ -44,7 +45,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(220,38,38,0.9);
+    background: rgba(220,38,38,0.95);
     padding: 15px 10px;
     position: sticky;
     top: 0;
@@ -53,12 +54,12 @@ img {
 
 .logo {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 19px;
 }
 
 nav {
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 nav button {
@@ -67,6 +68,7 @@ nav button {
     border: none;
     font-size: 15px;
     cursor: pointer;
+    padding: 8px 12px;
 }
 
 .menu-toggle {
@@ -75,55 +77,65 @@ nav button {
     cursor: pointer;
 }
 
-/* PANELLER - DÜZELTME BURADA */
+/* PANEL - MOBİL İÇİN ÖZEL DÜZENLEME */
 .panel {
     position: fixed;
-    bottom: -300px;
+    bottom: -100%;
     left: 0;
     width: 100%;
-    background: rgba(31,41,55,0.95);
-    padding: 20px;
-    transition: 0.4s;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    max-height: 70vh;           /* Maksimum yükseklik */
-    overflow-y: auto;           /* Dikey scroll çubuğu ekler */
-    overflow-x: hidden;         /* Yana taşmayı engeller */
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+    max-height: 75vh;           /* Ekranın %75'ini kaplasın */
+    background: rgba(31, 41, 55, 0.97);
+    padding: 20px 18px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    transition: bottom 0.4s ease;
+    overflow-y: auto;           /* Aşağı-yukarı kaydırma */
+    overflow-x: hidden;         /* Yana kaydırmayı tamamen engelle */
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
 }
 
 .panel.active {
     bottom: 0;
 }
 
-/* İçerik taşmasın diye ekstra güvenlik */
-.panel h3, .panel p {
-    max-width: 100%;
-    word-wrap: break-word;
+/* Açıklama metni taşmasın diye */
+.panel h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+}
+
+.panel p {
+    text-align: left;
+    line-height: 1.5;
+    margin: 12px 0;
+    word-break: break-word;     /* Uzun kelimeleri kır */
     overflow-wrap: break-word;
+    font-size: 1rem;
 }
 
 /* ALT BUTONLAR */
 .alt-butonlar {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin: 25px 0;
 }
 
 button.konum, button.telefon {
-    padding: 15px 20px;
+    padding: 16px 24px;
     font-size: 16px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
+    flex: 1;
+    max-width: 220px;
 }
 
 .konum { background: #22c55e; color: white; }
 .telefon { background: #dc2626; color: white; }
 
-/* MOBİL DÜZEN */
+/* MOBİL UYUM */
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
     
@@ -132,70 +144,63 @@ button.konum, button.telefon {
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 0;
+        right: 10px;
         background: rgba(220,38,38,0.95);
-        width: 200px;
+        width: 180px;
         padding: 10px;
+        border-radius: 10px;
     }
     
     nav.active { display: flex; }
 
     .alt-butonlar {
         flex-direction: column;
-        width: 85%;
-        margin: 30px auto;
+        width: 90%;
+        margin: 25px auto;
     }
     
     .alt-butonlar button {
         width: 100%;
+        max-width: none;
     }
 }
 
 /* GALERİ */
 .galeri {
-    margin-top: 50px;
+    margin: 40px 0;
 }
 
 .galeri-list {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .galeri-list img {
-    width: 22vw;
-    height: 22vw;
-    max-width: 120px;
-    max-height: 120px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #dc2626;
-}
-
-.container {
-    margin-top: 30px;
-    padding: 0 15px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
     <div class="logo">Alfa Oto Servis</div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
     <nav id="menu">
-        <button onclick="togglePanel('bilgi')">ℹ️ Servis</button>
+        <button onclick="togglePanel('bilgi')">ℹ️ Servis Bilgisi</button>
         <button onclick="togglePanel('aciklama')">📝 Açıklama</button>
     </nav>
 </div>
 
 <img src="IMG-20260413-WA0000.jpg">
 
-<div class="container">
+<div class="container" style="padding: 0 15px;">
     <h2>Hoşgeldiniz</h2>
 
     <div class="alt-butonlar">
@@ -225,10 +230,14 @@ button.konum, button.telefon {
 
 <div id="aciklama" class="panel">
     <h3>Açıklama</h3>
-    <p><mark>Ağır vasıta tamir, bakım ve elektronik hizmetleri</mark></p>
-    <p>Motor, fren, süspansiyon, elektrik ve yol yardım yapılır.</p>
-    <!-- Buraya istediğin kadar uzun metin ekleyebilirsin, yana taşma olmayacak -->
-    <p>Ekstra uzun açıklama buraya yazılabilir. Satırlar otomatik olarak aşağı inecek ve gerekirse dikey scroll çubuğu çıkacaktır.</p>
+    <p><mark>Her marka TIR/ KAMYON/OTOBÜS  gibi AĞIR VASITA araçlarınızın 
+        MOTOR MEKANİK BAKIM ONARIM ELEKTİRİK ELEKTRONİK </mark>
+        ızalarınız profesyonel bir şekilde tamir edilip onarılır</p><br>
+    <p>Motor arızalarınız yağ bakımı fren sisteminizdeki arızalar süspansiyon arızalarınız arıza ışıklarınız
+         söndürülür</p><br>
+    <p>Elektirik kaçakları her türlü aydınlatma sistemlerinde oluşan arızalar modifiye sistemleri ses sistemleri dingil kaldırma , indirme 
+        sisteminde oluşan arızalar kaliteli parçalar ve güvenilir işçilikle itina ile yapılır</p>
+    <!-- Buraya ne kadar uzun metin yazarsan yaz, yana taşmayacak -->
 </div>
 
 <script>
@@ -241,15 +250,15 @@ function toggleMenu() {
 }
 
 function togglePanel(id) {
-    let b = document.getElementById("bilgi");
-    let a = document.getElementById("aciklama");
+    const bilgi = document.getElementById("bilgi");
+    const aciklama = document.getElementById("aciklama");
 
     if (id === "bilgi") {
-        b.classList.toggle("active");
-        a.classList.remove("active");
+        bilgi.classList.toggle("active");
+        aciklama.classList.remove("active");
     } else {
-        a.classList.toggle("active");
-        b.classList.remove("active");
+        aciklama.classList.toggle("active");
+        bilgi.classList.remove("active");
     }
 }
 
