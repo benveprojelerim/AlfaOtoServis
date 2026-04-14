@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Büyük Vasıta Servis</title>
+<title>Alfa Oto Servis Ağır Vasıta</title>
 
 <style>
 body {
@@ -31,10 +31,13 @@ body::before {
     z-index: -1;
 }
 
+/* ÜST RESİM */
 img{
-    height: 200px;
-    width: 500px;
-    border-radius: 60px;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 30px;
+    margin-top: 20px;
 }
 
 /* NAVBAR */
@@ -43,26 +46,26 @@ img{
     justify-content: space-between;
     align-items: center;
     background: rgba(220,38,38,0.9);
-    padding: 15px 20px;
+    padding: 15px 10px;
     position: sticky;
     top: 0;
 }
 
 .logo {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 nav {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 nav button {
     color: white;
     background: none;
     border: none;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
 }
 
@@ -105,6 +108,8 @@ nav button {
     transition: 0.4s;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
 }
 
 .panel.active {
@@ -121,8 +126,8 @@ nav button {
 }
 
 button.konum, button.telefon {
-    padding: 15px 25px;
-    font-size: 18px;
+    padding: 15px 20px;
+    font-size: 16px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -142,7 +147,7 @@ button.konum, button.telefon {
 @media (max-width: 768px) {
     .alt-butonlar {
         flex-direction: column;
-        width: 80%;
+        width: 85%;
         margin: 30px auto;
     }
 
@@ -159,32 +164,23 @@ button.konum, button.telefon {
 .galeri-list {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .galeri-list img {
-    width: 120px;
-    height: 120px;
+    width: 22vw;
+    height: 22vw;
+    max-width: 120px;
+    max-height: 120px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #dc2626;
-    transition: 0.3s;
-}
-
-.galeri-list img:hover {
-    transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-    .galeri-list img {
-        width: 90px;
-        height: 90px;
-    }
 }
 
 .container {
-    margin-top: 50px;
+    margin-top: 30px;
+    padding: 0 15px;
 }
 </style>
 </head>
@@ -193,12 +189,11 @@ button.konum, button.telefon {
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <div class="logo">Alfa Oto Servis Ağır Vasıta</div>
-
+    <div class="logo">Alfa Oto Servis</div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <nav id="menu">
-        <button onclick="togglePanel('bilgi')">ℹ️ Servis Bilgisi</button>
+        <button onclick="togglePanel('bilgi')">ℹ️ Servis</button>
         <button onclick="togglePanel('aciklama')">📝 Açıklama</button>
     </nav>
 </div>
@@ -208,10 +203,9 @@ button.konum, button.telefon {
 <div class="container">
     <h2>Hoşgeldiniz</h2>
 
-    <!-- ALT BUTONLAR -->
     <div class="alt-butonlar">
-        <button class="konum" onclick="konumaGit()">📍 Konuma Git</button>
-        <button class="telefon" onclick="aramaSor()">📞 Telefon</button>
+        <button class="konum" onclick="konumaGit()">📍 Konum</button>
+        <button class="telefon" onclick="aramaSor()">📞 Ara</button>
     </div>
 </div>
 
@@ -226,25 +220,23 @@ button.konum, button.telefon {
     </div>
 </div>
 
-<!-- SERVİS PANEL -->
+<!-- PANEL -->
 <div id="bilgi" class="panel">
     <h3>Servis Bilgisi</h3>
-    <p>📞 0555 555 55 55</p>
+    <p>📞 0542 122 28 26</p>
     <p>🕒 7/24 Hizmet</p>
     <p>📍 Tekirdağ / Saray</p>
 </div>
 
-<!-- AÇIKLAMA PANEL -->
 <div id="aciklama" class="panel">
     <h3>Açıklama</h3>
-    <p><mark> marka TIR/ KAMYON/OTOBÜS  gibi AĞIR VASITA araçlarınızın MOTOR MEKANİK BAKIM ONARIM ELEKTİRİK ELEKTRONİK </mark>arızalarınız profesyonel bir şekilde tamir edilip onarılır</p>
-    <p>Motor arızalarınız yağ bakımı fren sisteminizdeki arızalar süspansiyon arızalarınız arıza ışıklarınız söndürülür</p>
-     <p>Elektirik kaçakları her türlü aydınlatma sistemlerinde oluşan arızalar modifiye sistemleri ses sistemleri dingil kaldırma , indirme sisteminde oluşan arızalar kaliteli parçalar ve güvenilir işçilikle itina ile yapılır</p>
+    <p><mark>Ağır vasıta tamir, bakım ve elektronik hizmetleri</mark></p>
+    <p>Motor, fren, süspansiyon, elektrik ve yol yardım yapılır</p>
 </div>
 
 <script>
 function konumaGit() {
-    window.open("https://maps.app.goo.gl/n1C78MNovfywVXSf9?g_st=aw", "_blank");
+    window.open("https://maps.app.goo.gl/n1C78MNovfywVXSf9", "_blank");
 }
 
 function toggleMenu() {
@@ -252,15 +244,15 @@ function toggleMenu() {
 }
 
 function togglePanel(id) {
-    let bilgi = document.getElementById("bilgi");
-    let aciklama = document.getElementById("aciklama");
+    let b = document.getElementById("bilgi");
+    let a = document.getElementById("aciklama");
 
     if (id === "bilgi") {
-        bilgi.classList.toggle("active");
-        aciklama.classList.remove("active");
+        b.classList.toggle("active");
+        a.classList.remove("active");
     } else {
-        aciklama.classList.toggle("active");
-        bilgi.classList.remove("active");
+        a.classList.toggle("active");
+        b.classList.remove("active");
     }
 }
 
