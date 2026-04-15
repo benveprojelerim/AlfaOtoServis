@@ -1,190 +1,200 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alfa Oto Servis Ağır Vasıta</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: white;
-    background-image: url("oter.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-/* KARARTMA */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.65);
-    z-index: -1;
-}
-
-/* ÜST RESİM */
-img {
-    width: 90%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 30px;
-    margin: 20px auto;
-    display: block;
-}
-
-/* NAVBAR */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(220,38,38,0.95);
-    padding: 15px 10px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 19px;
-}
-
-nav {
-    display: flex;
-    gap: 12px;
-}
-
-nav button {
-    color: white;
-    background: none;
-    border: none;
-    font-size: 15px;
-    cursor: pointer;
-    padding: 8px 12px;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-/* PANEL - MOBİL İÇİN ÖZEL DÜZENLEME */
-.panel {
-    position: fixed;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    max-height: 75vh;           /* Ekranın %75'ini kaplasın */
-    background: rgba(31, 41, 55, 0.97);
-    padding: 20px 18px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    transition: bottom 0.4s ease;
-    overflow-y: auto;           /* Aşağı-yukarı kaydırma */
-    overflow-x: hidden;         /* Yana kaydırmayı tamamen engelle */
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
-}
-
-.panel.active {
-    bottom: 0;
-}
-
-/* Açıklama metni taşmasın diye */
-.panel h3 {
-    margin: 0 0 15px 0;
-    font-size: 1.4rem;
-}
-
-.panel p {
-    text-align: left;
-    line-height: 1.5;
-    margin: 12px 0;
-    word-break: break-word;     /* Uzun kelimeleri kır */
-    overflow-wrap: break-word;
-    font-size: 1rem;
-}
-
-/* ALT BUTONLAR */
-.alt-butonlar {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin: 25px 0;
-}
-
-button.konum, button.telefon {
-    padding: 16px 24px;
-    font-size: 16px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    flex: 1;
-    max-width: 220px;
-}
-
-.konum { background: #22c55e; color: white; }
-.telefon { background: #dc2626; color: white; }
-
-/* MOBİL UYUM */
-@media (max-width: 768px) {
-    .menu-toggle { display: block; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        background: rgba(220,38,38,0.95);
-        width: 180px;
-        padding: 10px;
-        border-radius: 10px;
-    }
+    <!-- === GOOGLE ARAMA SONUCU İÇİN ÖNEMLİ KISIMLAR === -->
+    <title>Alfa Oto Servis Ağır Vasıta - 7/24 TIR Kamyon Tamiri Tekirdağ</title>
+    <meta name="description" content="Tekirdağ Saray Alfa Oto Servis. Her marka TIR, Kamyon, Otobüs ağır vasıta motor, mekanik, elektrik, elektronik tamiri. 7/24 acil hizmet. Telefon: 0542 122 28 26">
+    <meta name="keywords" content="tir tamiri tekirdağ, kamyon servisi saray, ağır vasıta tamiri, otobüs tamiri, 7/24 oto servis, alfa oto servis">
     
-    nav.active { display: flex; }
-
-    .alt-butonlar {
-        flex-direction: column;
-        width: 90%;
-        margin: 25px auto;
-    }
+    <meta name="robots" content="index, follow">
     
-    .alt-butonlar button {
-        width: 100%;
-        max-width: none;
-    }
-}
+    <!-- Sosyal medya için (opsiyonel ama faydalı) -->
+    <meta property="og:title" content="Alfa Oto Servis Ağır Vasıta">
+    <meta property="og:description" content="Tekirdağ / Saray - 7/24 TIR, Kamyon, Otobüs tamir servisi">
+    <meta property="og:type" content="website">
 
-/* GALERİ */
-.galeri {
-    margin: 40px 0;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background-image: url("oter.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
 
-.galeri-list {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
+        /* KARARTMA */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.65);
+            z-index: -1;
+        }
 
-.galeri-list img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #dc2626;
-}
-</style>
+        /* ÜST RESİM */
+        img {
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 30px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(220,38,38,0.95);
+            padding: 15px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 19px;
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        nav button {
+            color: white;
+            background: none;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 8px 12px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* PANEL - MOBİL İÇİN */
+        .panel {
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            max-height: 90vh;
+            background: rgba(31, 41, 55, 0.97);
+            padding: 20px 18px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            transition: bottom 0.4s ease;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
+        }
+
+        .panel.active {
+            bottom: 0;
+        }
+
+        .panel h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.4rem;
+        }
+
+        .panel p {
+            text-align: left;
+            line-height: 1.5;
+            margin: 12px 0;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            font-size: 1rem;
+        }
+
+        /* ALT BUTONLAR */
+        .alt-butonlar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        button.konum, button.telefon {
+            padding: 16px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            flex: 1;
+            max-width: 220px;
+        }
+
+        .konum { background: #22c55e; color: white; }
+        .telefon { background: #dc2626; color: white; }
+
+        /* MOBİL UYUM */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background: rgba(220,38,38,0.95);
+                width: 180px;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            
+            nav.active { display: flex; }
+
+            .alt-butonlar {
+                flex-direction: column;
+                width: 90%;
+                margin: 25px auto;
+            }
+            
+            .alt-butonlar button {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        /* GALERİ */
+        .galeri {
+            margin: 40px 0;
+        }
+
+        .galeri-list {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .galeri-list img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #dc2626;
+        }
+    </style>
 </head>
 
 <body>
@@ -224,20 +234,16 @@ button.konum, button.telefon {
 <div id="bilgi" class="panel">
     <h3>Servis Bilgisi</h3>
     <p>📞 0542 122 28 26</p>
-    <p>🕒 7/24 Hizmet</p>
     <p>📍 Tekirdağ / Saray</p>
 </div>
 
 <div id="aciklama" class="panel">
     <h3>Açıklama</h3>
-    <p><mark>Her marka TIR/ KAMYON/OTOBÜS  gibi AĞIR VASITA araçlarınızın 
+    <p><mark>Her marka TIR/ KAMYON/OTOBÜS gibi AĞIR VASITA araçlarınızın 
         MOTOR MEKANİK BAKIM ONARIM ELEKTİRİK ELEKTRONİK </mark>
-        ızalarınız profesyonel bir şekilde tamir edilip onarılır</p><br>
-    <p>Motor arızalarınız yağ bakımı fren sisteminizdeki arızalar süspansiyon arızalarınız arıza ışıklarınız
-         söndürülür</p><br>
-    <p>Elektirik kaçakları her türlü aydınlatma sistemlerinde oluşan arızalar modifiye sistemleri ses sistemleri dingil kaldırma , indirme 
-        sisteminde oluşan arızalar kaliteli parçalar ve güvenilir işçilikle itina ile yapılır</p>
-    <!-- Buraya ne kadar uzun metin yazarsan yaz, yana taşmayacak -->
+        arızalarınız profesyonel bir şekilde tamir edilip onarılır</p><br>
+    <p>Motor arızalarınız, yağ bakımı, fren sisteminizdeki arızalar, süspansiyon arızalarınız, arıza ışıklarınız söndürülür.</p><br>
+    <p>Elektrik kaçakları, aydınlatma sistemleri, modifiye sistemleri, ses sistemleri, dingil kaldırma-indirme sistemlerindeki arızalar kaliteli parçalar ve güvenilir işçilikle yapılır.</p>
 </div>
 
 <script>
